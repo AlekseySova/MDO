@@ -1,0 +1,48 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "ua.com.miydimonline.Test1Login",
+    "children" : [ {
+      "name" : "OpenSite",
+      "uid" : "83971e94b249bc8d",
+      "parentUid" : "fe984beeec96e71ec98a3e297fb1972f",
+      "status" : "broken",
+      "time" : {
+        "start" : 1595565179565,
+        "stop" : 1595565223851,
+        "duration" : 44286
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "unValidLogin",
+      "uid" : "1ea47e1022d26c5f",
+      "parentUid" : "fe984beeec96e71ec98a3e297fb1972f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595741688437,
+        "stop" : 1595741711620,
+        "duration" : 23183
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "validLogin",
+      "uid" : "a142f415977ca1d1",
+      "parentUid" : "fe984beeec96e71ec98a3e297fb1972f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595741713188,
+        "stop" : 1595741725197,
+        "duration" : 12009
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "ua.com.miydimonline.Test1Login"
+  } ]
+}

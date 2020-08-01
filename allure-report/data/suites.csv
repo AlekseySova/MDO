@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Fri Jul 24 07:32:59 EEST 2020","Fri Jul 24 07:33:43 EEST 2020","44286","Default Suite","Test11","ua.com.miydimonline.Test1Login","ua.com.miydimonline.Test1Login","OpenSite","Login",""
+"passed","Sun Jul 26 08:35:13 EEST 2020","Sun Jul 26 08:35:25 EEST 2020","12009","Default Suite","Test11","ua.com.miydimonline.Test1Login","ua.com.miydimonline.Test1Login","validLogin","Login",""
+"passed","Sun Jul 26 08:34:48 EEST 2020","Sun Jul 26 08:35:11 EEST 2020","23183","Default Suite","Test11","ua.com.miydimonline.Test1Login","ua.com.miydimonline.Test1Login","unValidLogin","unValidLogin",""

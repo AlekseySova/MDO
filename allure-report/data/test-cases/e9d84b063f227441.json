@@ -1,0 +1,95 @@
+{
+  "uid" : "e9d84b063f227441",
+  "name" : "OpenSite",
+  "fullName" : "ua.com.miydimonline.Test1Login.OpenSite",
+  "historyId" : "a73cae853ec1a392b0a31e0093c48850",
+  "time" : {
+    "start" : 1595432180042,
+    "stop" : 1595432215185,
+    "duration" : 35143
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stepUp",
+    "time" : {
+      "start" : 1595432148034,
+      "stop" : 1595432177569,
+      "duration" : 29535
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "testDown",
+    "time" : {
+      "start" : 1595432216496,
+      "stop" : 1595432216496,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "testClass",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "testMethod",
+    "value" : "OpenSite"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test11"
+  }, {
+    "name" : "subSuite",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-L32JF983"
+  }, {
+    "name" : "thread",
+    "value" : "10736@LAPTOP-L32JF983.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "Регистрация компании"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e9d84b063f227441.json",
+  "parameterValues" : [ ]
+}

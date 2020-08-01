@@ -1,0 +1,146 @@
+{
+  "uid" : "1ea47e1022d26c5f",
+  "name" : "unValidLogin",
+  "fullName" : "ua.com.miydimonline.Test1Login.unValidLogin",
+  "historyId" : "d122b4a38580d6221e944bd8b5bdb052",
+  "time" : {
+    "start" : 1595741688437,
+    "stop" : 1595741711620,
+    "duration" : 23183
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stepUp",
+    "time" : {
+      "start" : 1595741626557,
+      "stop" : 1595741684676,
+      "duration" : 58119
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "testDown",
+    "time" : {
+      "start" : 1595741725205,
+      "stop" : 1595741734824,
+      "duration" : 9619
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "testClass",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "testMethod",
+    "value" : "unValidLogin"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test11"
+  }, {
+    "name" : "subSuite",
+    "value" : "ua.com.miydimonline.Test1Login"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-L32JF983"
+  }, {
+    "name" : "thread",
+    "value" : "11268@LAPTOP-L32JF983.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "Регистрация компании"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "47eb4642e2d6377",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595604585527,
+        "stop" : 1595604609597,
+        "duration" : 24070
+      }
+    }, {
+      "uid" : "21b09d044db57c67",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595604221592,
+        "stop" : 1595604240762,
+        "duration" : 19170
+      }
+    }, {
+      "uid" : "387fb8e62adcd552",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595602701750,
+        "stop" : 1595602724814,
+        "duration" : 23064
+      }
+    }, {
+      "uid" : "a1c7c4e1beba0340",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595602037252,
+        "stop" : 1595602060920,
+        "duration" : 23668
+      }
+    }, {
+      "uid" : "188ba0f7f437ffda",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595601472796,
+        "stop" : 1595601490349,
+        "duration" : 17553
+      }
+    }, {
+      "uid" : "4b511e774c96776c",
+      "status" : "broken",
+      "statusDetails" : "java.util.ArrayList cannot be cast to org.openqa.selenium.WebElement",
+      "time" : {
+        "start" : 1595601237974,
+        "stop" : 1595601265111,
+        "duration" : 27137
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1ea47e1022d26c5f.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Expected condition failed: waiting for presence of element located by: By.xpath: .//*[@class='name' and @title] (tried for 10 second(s) with 500 MILLISECONDS interval)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "83971e94b249bc8d",
+        "parentUid" : "84f46b0047a3db05fd64bca1859082bb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1595565179565,
+          "stop" : 1595565223851,
+          "duration" : 44286
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "84f46b0047a3db05fd64bca1859082bb"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

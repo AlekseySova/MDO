@@ -1,0 +1,56 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Регистрация компании",
+    "children" : [ {
+      "name" : "Miydimonline",
+      "children" : [ {
+        "name" : "Login",
+        "children" : [ {
+          "name" : "Login",
+          "uid" : "83971e94b249bc8d",
+          "parentUid" : "ce3165ef98fd0f7d1080b38d79a8547b",
+          "status" : "broken",
+          "time" : {
+            "start" : 1595565179565,
+            "stop" : 1595565223851,
+            "duration" : 44286
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "a142f415977ca1d1",
+          "parentUid" : "ce3165ef98fd0f7d1080b38d79a8547b",
+          "status" : "passed",
+          "time" : {
+            "start" : 1595741713188,
+            "stop" : 1595741725197,
+            "duration" : 12009
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "ce3165ef98fd0f7d1080b38d79a8547b"
+      } ],
+      "uid" : "928ba6544efd08035e4e501ae5d2324f"
+    }, {
+      "name" : "unValidLogin",
+      "uid" : "1ea47e1022d26c5f",
+      "parentUid" : "99ff17aa4da7928787de19de29376aac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595741688437,
+        "stop" : 1595741711620,
+        "duration" : 23183
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "99ff17aa4da7928787de19de29376aac"
+  } ]
+}

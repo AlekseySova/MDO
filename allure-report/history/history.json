@@ -1,0 +1,60 @@
+{
+  "d122b4a38580d6221e944bd8b5bdb052" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1ea47e1022d26c5f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595741688437,
+        "stop" : 1595741711620,
+        "duration" : 23183
+      }
+    } ]
+  },
+  "65b453a9f3ddb0e7349a3bffeca94d06" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a142f415977ca1d1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595741713188,
+        "stop" : 1595741725197,
+        "duration" : 12009
+      }
+    } ]
+  },
+  "a73cae853ec1a392b0a31e0093c48850" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "83971e94b249bc8d",
+      "status" : "broken",
+      "statusDetails" : "Expected condition failed: waiting for presence of element located by: By.xpath: .//*[@class='name' and @title] (tried for 10 second(s) with 500 MILLISECONDS interval)",
+      "time" : {
+        "start" : 1595565179565,
+        "stop" : 1595565223851,
+        "duration" : 44286
+      }
+    } ]
+  }
+}

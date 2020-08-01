@@ -1,0 +1,31 @@
+[ {
+  "uid" : "a142f415977ca1d1",
+  "name" : "Login",
+  "time" : {
+    "start" : 1595741713188,
+    "stop" : 1595741725197,
+    "duration" : 12009
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ea47e1022d26c5f",
+  "name" : "unValidLogin",
+  "time" : {
+    "start" : 1595741688437,
+    "stop" : 1595741711620,
+    "duration" : 23183
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "83971e94b249bc8d",
+  "name" : "Login",
+  "time" : {
+    "start" : 1595565179565,
+    "stop" : 1595565223851,
+    "duration" : 44286
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
