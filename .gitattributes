@@ -1,0 +1,2 @@
+Credentials filter=git-crypt diff=git-crypt
+*.xlsx filter=git-crypt diff=git-crypt
