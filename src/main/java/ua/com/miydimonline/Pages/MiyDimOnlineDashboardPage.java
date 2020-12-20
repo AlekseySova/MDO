@@ -6,10 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ua.com.miydimonline.Utils.WebDriverUtil;
 
+import java.util.List;
+
 public class MiyDimOnlineDashboardPage {
 
     private By clientNameLocator = By.xpath(".//*[@class='name' and @title]");
     private By buildingObjectsRefLocator = By.xpath(".//a[@href='/Сова10005/uk/nextbuildings']");
+    private By profileMenuButtonLocator = By.xpath(".//*[@Class='actions dropdown-toggle dropdown-toggle-split']");
+    private By profileExitItemLocator = By.xpath(".//*[@Class='dropdown-menu dropdown-menu-right']//a[@href=\"javascript:$('.logout-form').submit()\"]");
 
     protected WebDriver webDriver;
     protected WebDriverUtil webDriverUtil;
@@ -36,7 +40,16 @@ public class MiyDimOnlineDashboardPage {
         buildingObjectsRef.click();
     }
 
+    public void accountExit(){
 
+        WebElement profileMenuButton = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(profileMenuButtonLocator));
 
+        profileMenuButton.click();
+
+        WebElement profileMenu = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(profileExitItemLocator));
+
+        profileMenu.click();
+
+    }
 
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ua.com.miydimonline.Utils.WebDriverUtil;
-import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.List;
 
@@ -19,6 +18,7 @@ public class MiyDimOnlineMainPage {
     private By loginErrorLabelLocator = By.xpath(".//*[@class='validation-summary-errors alert alert-danger alert-dismissable']/ul/li");
     private By companyRegistrationListLocator = By.xpath(".//li[@class='dropdown open-onhover']");
     private By companyRegButtonLocetor = By.xpath(".//a[@class='btn-reg-com']");
+    private By emptyEmailValidationLocetor = By.xpath(".//*[@Class='validation-summary-errors alert alert-danger alert-dismissable']/ul/li");
 
 
     protected WebDriver webDriver;
@@ -62,11 +62,11 @@ public class MiyDimOnlineMainPage {
     public String unValideLoginConfirm() {
         List<WebElement> loginErrorLabel = webDriverUtil.waitForExpectedConList(ExpectedConditions.presenceOfAllElementsLocatedBy(loginErrorLabelLocator));
         int validationFieldsCount = loginErrorLabel.size();
-        String acctualResult= "";
+        String actualResult= "";
 
         if (validationFieldsCount == 1) {
 
-            acctualResult = loginErrorLabel.get(0).getText();
+            actualResult = loginErrorLabel.get(0).getText();
 
         } else {
 
@@ -74,14 +74,25 @@ public class MiyDimOnlineMainPage {
 
                 if(loginErrorLabel.get(i).getText().equals("Будь ласка, введіть коректну електронну адресу і пароль облікового запису") ){
 
-                    acctualResult = loginErrorLabel.get(i).getText();
+                    actualResult = loginErrorLabel.get(i).getText();
 
                 }
 
             }
         }
 
-        return acctualResult;
+        return actualResult;
+    }
+
+    public String emptyEmailValidation(){
+
+
+        WebElement emptyEmailMessage = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(emptyEmailValidationLocetor));
+
+        String actualResult = emptyEmailMessage.getText();
+
+
+        return actualResult;
     }
 
     public void companyRegButton(){

@@ -28,7 +28,7 @@ public class WebDriverTestBase {
     public void stepUp(){
         // manual version
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\citig\\IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\chromedriver84.exe");
+                "C:\\Users\\citig\\IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\chromedriver.exe");
         webdriver = new ChromeDriver();
 
         setWebDriverSettings();

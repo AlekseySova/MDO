@@ -15,7 +15,7 @@ import ua.com.miydimonline.Utils.WorkWithExcelFile;
 import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
-public class Test1Login extends WebDriverTestBase {
+public class Login extends WebDriverTestBase {
 
     String expectedText = "Сова 10005";
     String expectedValidMassege = "Будь ласка, введіть коректну електронну адресу і пароль облікового запису";
@@ -43,9 +43,12 @@ public class Test1Login extends WebDriverTestBase {
 
         assertEquals(clientName, expectedText);
 
+        DashboardPage.accountExit();
+
     }
     @Epic("Регистрация компании")
-    @Test
+    @Feature("Miydimonline")
+    @Test(priority = 2, description = "MDOLOG0002")
     public void unValidLogin(){
 
         MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
@@ -57,4 +60,28 @@ public class Test1Login extends WebDriverTestBase {
 
         assertEquals(expectedValidMassege, validMessage);
     }
+    @Epic("Регистрация компании")
+    @Feature("Miydimonline")
+    @Test(priority = 2, description = "MDOLOG0003")
+    public void loginWithOutEmail(){
+
+        MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
+
+        WorkWithExcelFile excelFile = new WorkWithExcelFile();
+
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","PositiveClientPassword");
+
+        String expectedResult = excelFile.exportFromExcelFile("Credentials","EmptyEmailValidation");
+
+        MainPage.openPage(host);
+
+        MainPage.login("", clientPassword);
+
+        String emptyEmailMessage = MainPage.emptyEmailValidation();
+
+        assertEquals(expectedResult,emptyEmailMessage);
+
+
+    }
+
 }
