@@ -21,13 +21,14 @@ public class WebDriverTestBase {
     long implicitWait = Long.parseLong(PropertiesCache.getProperty("wait.implicit"));
     long pageLoadTimeout = Long.parseLong(PropertiesCache.getProperty("wait.pageload"));
     long setScriptTimeout = Long.parseLong(PropertiesCache.getProperty("wait.setscript"));
+    public String host = "https://osbb-uat.dynamo-ny.com/";
 
     @BeforeClass
 
     public void stepUp(){
         // manual version
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\citig\\IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\chromedriver.exe");
+                "C:\\Users\\citig\\IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\chromedriver84.exe");
         webdriver = new ChromeDriver();
 
         setWebDriverSettings();

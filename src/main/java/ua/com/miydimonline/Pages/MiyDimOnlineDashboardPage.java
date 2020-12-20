@@ -9,6 +9,7 @@ import ua.com.miydimonline.Utils.WebDriverUtil;
 public class MiyDimOnlineDashboardPage {
 
     private By clientNameLocator = By.xpath(".//*[@class='name' and @title]");
+    private By buildingObjectsRefLocator = By.xpath(".//a[@href='/Сова10005/uk/nextbuildings']");
 
     protected WebDriver webDriver;
     protected WebDriverUtil webDriverUtil;
@@ -27,5 +28,15 @@ public class MiyDimOnlineDashboardPage {
         return clientNameText;
 
     }
+
+    public void goToBuildingObjects(){
+
+        WebElement buildingObjectsRef = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(buildingObjectsRefLocator));
+
+        buildingObjectsRef.click();
+    }
+
+
+
 
 }

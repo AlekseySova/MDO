@@ -9,16 +9,16 @@ import ua.com.miydimonline.Pages.MiyDimOnlineMainPage;
 @Listeners({TestListener.class})
 public class CompanyRegistration extends WebDriverTestBase {
 
-    String site = "https://osbb-uat.dynamo-ny.com";
-
     @Test
     public void openRegistrationList() {
 
     MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
 
-    MainPage.openPage(site);
+    MainPage.openPage(host);
 
     MainPage.companyRegButton();
+
+
 
     }
 

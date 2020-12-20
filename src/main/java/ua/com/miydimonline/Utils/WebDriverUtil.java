@@ -1,12 +1,23 @@
 package ua.com.miydimonline.Utils;
 
 import io.qameta.allure.Attachment;
-import org.openqa.selenium.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+import org.apache.poi.hssf.*;
 import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import static com.google.common.io.Files.toByteArray;
 
@@ -15,6 +26,7 @@ public class WebDriverUtil {
     private WebDriver webDriver;
     private WebDriverWait webDriverWait;
     long explicitWait = Long.parseLong(PropertiesCache.getProperty("wait.explicit"));
+    //String filePath = "..IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\Credentials.xlsx";
 
     public WebDriverUtil(WebDriver webDriver){
 
@@ -46,14 +58,10 @@ public class WebDriverUtil {
         return new byte[0];
     }
 
-    public void focusElement(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor)webDriver;
+    public void switchToNewTab (String oldTab){
 
-        String javaScript = "var element = arguments[0]; var mouseEventObj = document.createEvent('MouseEvents'); " +
-                "mouseEventObj.initEvent( 'mouseover', true, true ); " +
-                "element.dispatchEvent(mouseEventObj);";
+        ArrayList<String> newTab = new ArrayList<String>(webDriver.getWindowHandles());
+        webDriver.switchTo().window(newTab.get(1));
 
-        js.executeScript(javaScript, element);
     }
-
 }

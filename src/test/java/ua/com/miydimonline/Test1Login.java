@@ -10,14 +10,14 @@ import ua.com.miydimonline.Core.TestListener;
 import ua.com.miydimonline.Core.WebDriverTestBase;
 import ua.com.miydimonline.Pages.MiyDimOnlineDashboardPage;
 import ua.com.miydimonline.Pages.MiyDimOnlineMainPage;
+import ua.com.miydimonline.Utils.WorkWithExcelFile;
 
 import static org.testng.Assert.assertEquals;
 
 @Listeners({TestListener.class})
 public class Test1Login extends WebDriverTestBase {
 
-    String WebSite = "https://osbb-uat.dynamo-ny.com";
-    String expectedText = "Сова9310";
+    String expectedText = "Сова 10005";
     String expectedValidMassege = "Будь ласка, введіть коректну електронну адресу і пароль облікового запису";
 
     @Epic("Регистрация компании")
@@ -29,13 +29,19 @@ public class Test1Login extends WebDriverTestBase {
 
         MiyDimOnlineDashboardPage DashboardPage = new MiyDimOnlineDashboardPage(webdriver);
 
-        MainPage.openPage(WebSite);
+        WorkWithExcelFile excelFile = new WorkWithExcelFile();
 
-        MainPage.login("citigacy+company9310@gmail.com", "Testtest@47");
+        String clientLogin = excelFile.exportFromExcelFile("Credentials","PositiveClientLogin");
+
+        MainPage.openPage(host);
+
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","PositiveClientPassword");
+
+        MainPage.login(clientLogin, clientPassword);
 
         String clientName = DashboardPage.clientConfirm();
 
-        assertEquals(expectedText, clientName);
+        assertEquals(clientName, expectedText);
 
     }
     @Epic("Регистрация компании")
@@ -44,8 +50,8 @@ public class Test1Login extends WebDriverTestBase {
 
         MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
 
-        MainPage.openPage(WebSite);
-        MainPage.login("citigacy+company9310@gmail.com", "Testtest@48");
+        MainPage.openPage(host);
+        MainPage.login("citigacy+company10005@gmail.com", "Testtest@48");
 
         String validMessage = MainPage.unValideLoginConfirm();
 
