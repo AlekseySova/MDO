@@ -13,14 +13,14 @@ public class WorkWithExcelFile {
 
     //String filePath = "C:\\Users\\citig\\IdeaProjects\\MiyDimOnline-Selenium-Java\\src\\main\\resources\\Credentials.xlsx";
 
-    public String exportFromExcelFile(String sheetName,String variableName){
+    public String exportFromExcelFile(String fileName,String sheetName,String variableName){
 
         String valueString = null;
 
         try{
             String path = new File("src\\main\\resources").getAbsolutePath();
 
-            FileInputStream file = new FileInputStream(path +"\\Credentials.xlsx");
+            FileInputStream file = new FileInputStream(path +"\\" + fileName + ".xlsx");
 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
@@ -45,10 +45,12 @@ public class WorkWithExcelFile {
                     valueString = row.getCell(1).toString();
                     //System.out.println("valueCell = " + valueString);
                     ifVariableTrue = true;
+                    break;
                 }
 
-                file.close();
             }
+
+            file.close();
             if(ifVariableTrue == false){
 
                 System.out.println("Variable not found in file");

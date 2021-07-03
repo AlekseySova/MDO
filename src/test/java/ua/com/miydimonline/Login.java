@@ -10,6 +10,7 @@ import ua.com.miydimonline.Core.TestListener;
 import ua.com.miydimonline.Core.WebDriverTestBase;
 import ua.com.miydimonline.Pages.MiyDimOnlineDashboardPage;
 import ua.com.miydimonline.Pages.MiyDimOnlineMainPage;
+import ua.com.miydimonline.Pages.MiyDimOnlineResidentRegisterPage;
 import ua.com.miydimonline.Utils.WorkWithExcelFile;
 
 import static org.testng.Assert.assertEquals;
@@ -31,11 +32,11 @@ public class Login extends WebDriverTestBase {
 
         WorkWithExcelFile excelFile = new WorkWithExcelFile();
 
-        String clientLogin = excelFile.exportFromExcelFile("Credentials","PositiveClientLogin");
+        String clientLogin = excelFile.exportFromExcelFile("Credentials","Credentials","PositiveClientLogin");
 
         MainPage.openPage(host);
 
-        String clientPassword = excelFile.exportFromExcelFile("Credentials","PositiveClientPassword");
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","Credentials","PositiveClientPassword");
 
         MainPage.login(clientLogin, clientPassword);
 
@@ -69,9 +70,9 @@ public class Login extends WebDriverTestBase {
 
         WorkWithExcelFile excelFile = new WorkWithExcelFile();
 
-        String clientPassword = excelFile.exportFromExcelFile("Credentials","PositiveClientPassword");
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","Credentials","PositiveClientPassword");
 
-        String expectedResult = excelFile.exportFromExcelFile("Credentials","EmptyEmailValidation");
+        String expectedResult = excelFile.exportFromExcelFile("Credentials","Credentials","EmptyEmailValidation");
 
         MainPage.openPage(host);
 
@@ -81,6 +82,53 @@ public class Login extends WebDriverTestBase {
 
         assertEquals(expectedResult,emptyEmailMessage);
 
+
+    }
+    @Epic("Регистрация компании")
+    @Feature("Miydimonline")
+    @Test(priority = 2, description = "MDOLOG0004")
+    public void loginWithoutPassword(){
+
+        MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
+
+        WorkWithExcelFile excelFile = new WorkWithExcelFile();
+
+        String clientEmail = excelFile.exportFromExcelFile("Credentials","Credentials", "PositiveClientLogin");
+
+        String expectedResult = excelFile.exportFromExcelFile("Credentials","Credentials", "EmptyPasswordMessage");
+
+        MainPage.openPage(host);
+
+        MainPage.login(clientEmail, "");
+
+        String actualResult = MainPage.emptyPasswordValidation();
+
+        assertEquals(expectedResult, actualResult);
+
+    }
+
+    @Epic("Регистрация компании")
+    @Feature("Miydimonline")
+    @Test(priority = 2, description = "MDOLOG0005")
+    public void loginWithFallsEmail(){
+
+        MiyDimOnlineMainPage MainPage = new MiyDimOnlineMainPage(webdriver);
+
+        MiyDimOnlineResidentRegisterPage ResidentPage = new MiyDimOnlineResidentRegisterPage(webdriver);
+
+        WorkWithExcelFile excelFile = new WorkWithExcelFile();
+
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","Credentials","PositiveClientPassword");
+
+        String clientLogin = excelFile.exportFromExcelFile("Credentials","Credentials", "UnregisterEmail");
+
+        MainPage.openPage(host);
+
+        MainPage.login(clientLogin,clientPassword);
+
+        String residentPageURL = ResidentPage.getPageName();
+
+        assertEquals("Реєстрація мешканця", residentPageURL);
 
     }
 

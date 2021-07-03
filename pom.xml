@@ -11,7 +11,7 @@
 
     <properties>
         <selenium.version>3.4.0</selenium.version>
-        <testng.version>6.11</testng.version>
+        <testng.version>7.3.0</testng.version>
         <webdrivermanager.version>1.6.2</webdrivermanager.version>
         <maven.compilor.source>1.8</maven.compilor.source>
         <maven.compilor.target>1.8</maven.compilor.target>

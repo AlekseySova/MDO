@@ -17,9 +17,8 @@ public class MiyDimOnlineMainPage {
     private By loginEntryLocator = By.xpath(".//button[@class='btn btn-success btn-md']");
     private By loginErrorLabelLocator = By.xpath(".//*[@class='validation-summary-errors alert alert-danger alert-dismissable']/ul/li");
     private By companyRegistrationListLocator = By.xpath(".//li[@class='dropdown open-onhover']");
-    private By companyRegButtonLocetor = By.xpath(".//a[@class='btn-reg-com']");
-    private By emptyEmailValidationLocetor = By.xpath(".//*[@Class='validation-summary-errors alert alert-danger alert-dismissable']/ul/li");
-
+    private By companyRegButtonLocator = By.xpath(".//a[@class='btn-reg-com']");
+    private By emptyEmailValidationLocator = By.xpath(".//*[@Class='validation-summary-errors alert alert-danger alert-dismissable']/ul/li");
 
     protected WebDriver webDriver;
     protected WebDriverUtil webDriverUtil;
@@ -59,6 +58,18 @@ public class MiyDimOnlineMainPage {
 
     }
 
+    public void loginOnLoginPage(String mail, String password){
+
+        WebElement loginEmailFld = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(loginEmailLocator));
+        WebElement loginPasswordFld = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(loginPasswordLocator));
+        WebElement loginEntryBtn = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(loginEntryLocator));
+
+        loginEmailFld.sendKeys(mail);
+        loginPasswordFld.sendKeys(password);
+        loginEntryBtn.click();
+
+    }
+
     public String unValideLoginConfirm() {
         List<WebElement> loginErrorLabel = webDriverUtil.waitForExpectedConList(ExpectedConditions.presenceOfAllElementsLocatedBy(loginErrorLabelLocator));
         int validationFieldsCount = loginErrorLabel.size();
@@ -87,10 +98,19 @@ public class MiyDimOnlineMainPage {
     public String emptyEmailValidation(){
 
 
-        WebElement emptyEmailMessage = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(emptyEmailValidationLocetor));
+        WebElement emptyEmailMessage = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(emptyEmailValidationLocator));
 
         String actualResult = emptyEmailMessage.getText();
 
+
+        return actualResult;
+    }
+
+    public String emptyPasswordValidation(){
+
+        WebElement emptyPasswordMessage = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(emptyEmailValidationLocator));
+
+        String actualResult = emptyPasswordMessage.getText();
 
         return actualResult;
     }
@@ -101,11 +121,9 @@ public class MiyDimOnlineMainPage {
 
         WebElement companyRegElement = companyRegistrationList.get(1);
 
-        //webDriverUtil.focusElement(companyRegElement);
-
         companyRegElement.click();
 
-        WebElement companyRegistrationButton = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(companyRegButtonLocetor));
+        WebElement companyRegistrationButton = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(companyRegButtonLocator));
 
         companyRegistrationButton.click();
     }

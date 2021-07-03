@@ -14,6 +14,8 @@ public class MiyDimOnlineDashboardPage {
     private By buildingObjectsRefLocator = By.xpath(".//a[@href='/Сова10005/uk/nextbuildings']");
     private By profileMenuButtonLocator = By.xpath(".//*[@Class='actions dropdown-toggle dropdown-toggle-split']");
     private By profileExitItemLocator = By.xpath(".//*[@Class='dropdown-menu dropdown-menu-right']//a[@href=\"javascript:$('.logout-form').submit()\"]");
+    private By assistansCloseBtnLocator = By.xpath(".//*[@id='alert-dlg']//button[@class='close' and @data-dismiss='modal']");
+    private By contractBtnLocator = By.xpath(".//*[@class='m-btn m-btn-finish btn-small trial-link']");
 
     protected WebDriver webDriver;
     protected WebDriverUtil webDriverUtil;
@@ -51,5 +53,23 @@ public class MiyDimOnlineDashboardPage {
         profileMenu.click();
 
     }
+
+    public void assistanceClose(){
+
+        WebElement assistansCloseBtn = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(assistansCloseBtnLocator));
+
+        assistansCloseBtn.click();
+
+    }
+
+    public void goToContract(){
+
+        WebElement contractBtn = webDriverUtil.waitForExpectedCondition(ExpectedConditions.presenceOfElementLocated(contractBtnLocator));
+
+        contractBtn.click();
+
+    }
+
+
 
 }

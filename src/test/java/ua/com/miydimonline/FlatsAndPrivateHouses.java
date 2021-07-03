@@ -36,11 +36,11 @@ public class FlatsAndPrivateHouses extends WebDriverTestBase {
 
         WorkWithExcelFile excelFile = new WorkWithExcelFile();
 
-        String clientLogin = excelFile.exportFromExcelFile("Credentials","PositiveClientLogin");
+        String clientLogin = excelFile.exportFromExcelFile("Credentials" ,"Credentials","PositiveClientLogin");
 
         MainPage.openPage(host);
 
-        String clientPassword = excelFile.exportFromExcelFile("Credentials","PositiveClientPassword");
+        String clientPassword = excelFile.exportFromExcelFile("Credentials","Credentials","PositiveClientPassword");
 
         MainPage.login(clientLogin, clientPassword);
 

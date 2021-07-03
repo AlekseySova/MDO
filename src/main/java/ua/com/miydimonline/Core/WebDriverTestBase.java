@@ -49,7 +49,7 @@ public class WebDriverTestBase {
 
     public void testDown(){
 
-        //webdriver.quit();
+        webdriver.quit();
 
     }
 
